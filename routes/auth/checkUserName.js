@@ -1,12 +1,13 @@
 
 import express from 'express';
-import User from '../../models/User';
+import User from '../../models/User.js';
 
 const router = express.Router();
 
 router.get('/check-username', async (req, res) => {
   try {
     const { username } = req.query;
+
 
     if (!username) {
       return res.status(400).json({
