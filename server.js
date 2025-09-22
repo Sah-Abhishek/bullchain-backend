@@ -2,9 +2,9 @@
 import express from 'express';
 import connectDb from './connection/db.js';
 import dotenv from 'dotenv';
-import registerRoute from './routes/auth/auth.js'
 import checkUserName from './routes/auth/checkUserName.js'
 import cors from 'cors';
+import routes from './routes/index.js'
 
 dotenv.config();
 const app = express();
@@ -14,10 +14,10 @@ app.use(cors());
 connectDb(process.env.MONGODB_CONNECTION_URI);
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('Server is running fine!');
 });
 
-app.use('/auth', registerRoute);
+app.use('/api', routes);
 app.use('/auth', checkUserName);
 
 const PORT = 3000;

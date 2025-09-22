@@ -1,7 +1,7 @@
 {
   "name": "bullchain-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node index.js",
@@ -15,6 +15,7 @@
     "nodemon": "^3.1.10"
   },
   "dependencies": {
+    "axios": "^1.12.2",
     "cors": "^2.8.5",
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
